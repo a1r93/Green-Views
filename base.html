@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Green Views</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./dist/css/greenViews.css">
+    <link rel="stylesheet" type="text/css" href="./dist/css/animated-buttons.css">
+    <link rel="stylesheet" type="text/css" href="./dist/css/animate.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./jquery-visible-master/jquery.visible.min.js"></script>
+    <script src="./galleria/galleria-1.5.6.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="./dist/js/script.js"></script>
+</head>
+<body>
+<div class="top-menu">
+    <div class="row">
+        <nav class="navbar navigation">
+            <div class="topbar" id="topbar">
+                <div class="container">
+                    <div class="pull-right">
+                    <button class="btn topbar-btn"><i class="fa fa-facebook fa-topbar"></i></button>
+                    <button class="btn topbar-btn"><i class="fa fa-twitter fa-topbar"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="scroll-menu">
+                    <div class="pull-left">
+                        <div class="navbar-title">
+                            <a class="home"><img class="logo" src="./dist/images/logo.jpg"></a>
+                        </div>
+                    </div>
+                    <div class="pull-right">
+                        <ul class="nav">
+                            <li>
+                                <a href="#" class="home"><i class="fa fa-home fa-2x home-button"></i></a>
+                            </li>
+                            <li>
+                                <a href="#description" id="toDescription">Description</a>
+                            </li>
+                            <li>
+                                <a href="#pictures" class="toPictures">Photos</a>
+                            </li>
+                            <li>
+                                <a href="#contact" class="toContact">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="row" id="top">
+        <div id="images">
+            <img class="photo-home seen" id="chantier1" src="./dist/images/chantier1.jpg">
+            <img class="photo-home" id="chantier2" src="./dist/images/chantier2.jpg">
+            <img class="photo-home" id="chantier3" src="./dist/images/chantier3.jpg">
+            <i id="pause" class="fa fa-pause fa-4x stop-img"></i>
+            <i id="play" class="fa fa-play fa-4x stop-img"></i>
+            <div class="picture-titles" id="div-title1">
+                <h2 id="title-1">Bienvenue chez green views</h2>
+            </div>
+            <div class="line"></div>
+            <div class="picture-subtitles" id="div-subtitle1">
+                <h5 id="subtitle-1">Société <br/>d'entreprenariat de jardin</h5>
+            </div>
+
+            <div class="picture-titles2" id="div-title2">
+                <h2 class="animated bounceInDown" id="title-2">Visionner la galerie</h2>
+            </div>
+            <div class="picture-subtitles2" id="div-subtitle2">
+                <a href="#pictures" class="toPictures"><button class="button" id="subtitle-2"><span>Visionner</span></button></a>
+            </div>
+
+            <div class="picture-titles3" id="div-title3">
+                <h2 class="animated lightSpeedIn shown" id="title-3-1">Jardins</h2>
+                <h2 class="animated lightSpeedIn" id="title-3-2">Terrasses</h2>
+                <h2 class="animated lightSpeedIn" id="title-3-3">Plantations</h2>
+                <h2 class="animated lightSpeedIn" id="title-3-4">Satisfaction Garantie</h2>
+            </div>
+            <div class="picture-subtitles3" id="div-subtitle3">
+                <a href="#pictures" class="toContact"><button class="button" id="subtitle-3"><span>Contacter</span></button></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="description">
+        <div class="container">
+            <div style="text-align: center;">
+                <hr class="hr-lg mt-0 mb-3 w-10 mx-auto hr-primary">
+                <h2 class="text-center text-uppercase font-weight-bold my-0">Description</h2>
+                <h5 class="text-center font-weight-light text-muted">Green Views, plus qu'une entreprise</h5>
+                <hr class="w-50 mx-auto">
+            </div>
+            <div class="row">
+                <div class="col-md-4 description-divs">
+                    <i class="fa fa-pagelines fa-8x description-icons"></i>
+                    <h3><b>Plantations</b></h3>
+                    <span class="description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper metus nunc</span>
+                </div>
+                <div class="col-md-4 description-divs">
+                    <i class="fa fa-file-o fa-8x description-icons"></i>
+                    <h3><b>Devis gratuits</b></h3>
+                    <span class="description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in dolor et tortor ullamcorper mattis id in libero. Curabitur sit amet eros a purus imperdiet ultrices. </span>
+                </div>
+                <div class="col-md-4 description-divs">
+                    <i class="fa fa-cubes fa-8x description-icons"></i>
+                    <h3><b>Terrasses</b></h3>
+                    <span class="description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at semper est. Interdum et malesuada fames ac ante ipsum primis. </span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 description-divs">
+                    <i class="fa fa-tree fa-8x description-icons"></i>
+                    <h3><b>Élagage</b></h3>
+                    <span class="description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a porta magna. Cras aliquam, quam eu scelerisque tristique, est.</span>
+                </div>
+                <div class="col-md-4 description-divs">
+                    <i class="fa fa-tachometer fa-8x description-icons"></i>
+                    <h3><b>Entretien</b></h3>
+                    <span class="description-text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed nulla a velit scelerisque molestie sit amet ultricies dui. Mauris quis ligula aliquet, viverra lacus sit amet, efficitur eros. Fusce porttitor, nisi.</span>
+                </div>
+                <div class="col-md-4 description-divs">
+                    <i class="fa fa-handshake-o fa-8x description-icons"></i>
+                    <h3><b>Communication</b></h3>
+                    <span class="description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id mi bibendum, aliquam dolor nec, mollis massa. Integer fermentum neque vel.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="pictures">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <hr class="hr-lg mt-0 mb-3 w-10 mx-auto hr-primary">
+                <h2 class="text-center text-uppercase font-weight-bold my-0">Gallerie</h2>
+                <h5 class="text-center font-weight-light text-muted">Découvrez toutes nos photos</h5>
+                <hr class="w-50 mx-auto">
+            </div>
+        </div>
+        <div id="galleria">
+            <a href="./dist/images/carousel.jpg">
+                <img 
+                    src="./dist/images/carousel.jpg",
+                    data-big="./dist/images/carousel.jpg"
+                    data-title="Carousel"
+                    data-description="Un petit carousel pour le test"
+                >
+            </a>
+            <a href="./dist/images/chantier1.jpg">
+                <img 
+                    src="./dist/images/chantier1.jpg",
+                    data-big="./dist/images/chantier1.jpg"
+                    data-title="Carousel"
+                    data-description="Un petit carousel pour le test"
+                >
+            </a>
+            <a href="./dist/images/chantier2.jpg">
+                <img 
+                    src="./dist/images/chantier2.jpg",
+                    data-big="./dist/images/chantier2.jpg"
+                    data-title="Carousel"
+                    data-description="Un petit carousel pour le test"
+                >
+            </a>
+        </div>
+    </div>
+
+    <div class="row" id="contact">
+        <div class="container">
+            <div style="text-align: center;">
+                <hr class="hr-lg mt-0 mb-3 w-10 mx-auto hr-primary">
+                <h2 class="text-center text-uppercase font-weight-bold my-0">Contact</h2>
+                <h5 class="text-center font-weight-light text-muted">Vous souhaiteriez recevoir un devis?<br/>N'hésitez pas à nous contacter</h5>
+                <hr class="w-50 mx-auto">
+            </div>
+            <div class="text-center" class="contact-wrapper">
+                <form class="form-horizontal">
+                    <div class="box box-info">
+                        <div class="box-header with-border">
+                        </div>
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="inputName" style="padding-right: 80px;" class="col-md-5 control-label">Nom</label>
+
+                                <div class="input-group col-md-4">
+                                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                    <input type="name" class="form-control" placeholder="Nom">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputEmail" style="padding-right: 80px;" class="col-md-5 control-label">Adresse-mail</label>
+
+                                <div class="input-group col-md-4">
+                                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                    <input type="email" class="form-control" placeholder="Adresse mail">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputEmail" style="padding-right: 80px;" class="col-md-5 control-label">Téléphone</label>
+
+                                <div class="input-group col-md-4">
+                                    <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                                    <input type="email" class="form-control" placeholder="Téléphone">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputEmail" style="padding-right: 80px;" class="col-md-5 control-label">Commentaire</label>
+                                <div class="inputGroupContainer">
+                                    <div class="input-group col-md-4">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                                        <textarea class="form-control" name="comment" placeholder="Posez ici vôtre question..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-5"></div>
+                                <button type="submit" class="btn btn-success"><i class="fa fa-check"></i>Envoyer</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
