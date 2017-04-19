@@ -209,12 +209,12 @@ body {
 
 #images {
     margin-bottom: 50px;
-    margin-top: 152px;
+    margin-top: 160px;
 }
 
 .picture-titles {
     position: absolute;
-    top: 20em;
+    top: 17em;
     left: 6%;
     z-index: 4;
     width: 30%;
@@ -222,7 +222,7 @@ body {
 
 .picture-subtitles {
     position: absolute;
-    top: 36em;
+    top: 32em;
     left: 6%;
     z-index: 4;
     width: 28%;
@@ -262,8 +262,8 @@ body {
 
 #title-1 {
     color: white;
-    font-size: 70px;
-    /*font-family: centralTitle;*/
+    font-size: 60px;
+    font-family: Tahoma, Geneva, sans-serif;
     -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein 2s; /* Firefox < 16 */
         -ms-animation: fadein 2s; /* Internet Explorer */
@@ -272,9 +272,9 @@ body {
 }
 
 #subtitle-1 {
-    color: #004d0e;
-    font-size: 40px;
-    /*font-family: centralTitle;*/
+    color: #a6a6a6;
+    font-size: 30px;
+    font-family: Tahoma, Geneva, sans-serif;
     -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein 2s; /* Firefox < 16 */
         -ms-animation: fadein 2s; /* Internet Explorer */
@@ -282,10 +282,14 @@ body {
             animation: fadein 2s;
 }
 
+#subtitle-1 b {
+    font-weight: 600 !important;
+}
+
 #title-2 {
     color: white;
-    font-size: 70px;
-    /*font-family: centralTitle;*/
+    font-size: 60px;
+    font-family: Tahoma, Geneva, sans-serif;
 }
 
 #subtitle-2 {
@@ -299,8 +303,8 @@ body {
 
 #title-3-1, #title-3-2, #title-3-3, #title-3-4 {
     color: white;
-    font-size: 70px;
-    /*font-family: centralTitle;*/
+    font-size: 60px;
+    font-family: Tahoma, Geneva, sans-serif;
 }
 
 #subtitle-3 {
@@ -313,13 +317,14 @@ body {
 }
 
 .line {
-    background: #636166;
+    background: #e6e6e6;
     z-index: 4;
     height: 5px;
     width: 20%;
     position: relative;
-    top: 24em;
+    top: 20em;
     left:10em;
+    opacity: 0.7;
     -webkit-animation: showHide 2s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: showHide 2s; /* Firefox < 16 */
         -ms-animation: showHide 2s; /* Internet Explorer */
@@ -437,7 +442,8 @@ hr.hr-primary {
 }
 
 #contact {
-    margin-top: 90px;
+    margin-top: 60px;
+    margin-bottom: 60px;
 }
 
 .contact-wrapper {
@@ -447,4 +453,256 @@ hr.hr-primary {
 
 .inputs-group {
     margin-top: 30px;
+}
+
+.notifications {
+    color: tomato;
+    text-align: left;
+}
+
+footer {
+    background-color: #003309;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.footer-info {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.footer-text {
+    color: #cccccc;
+}
+
+.topper-text {
+    font-size: 16px;
+    color: #cccccc;
+}
+
+.footer-title {
+    color: #cccccc;
+    font-size: 25px;
+}
+
+.topper-title {
+    color: #cccccc;
+    font-size: 35px;
+}
+
+.tabulation {
+    width:16px;
+    float: left;
+}
+
+.tabulation2 {
+    width:18px;
+    float: left;
+}
+
+.logo-text {
+    font-size: 18px;
+    color: #b3ffc1;
+}
+
+.logo-text b {
+    color: #008017;
+}
+
+.logo-top-text {
+    font-size: 55px;
+    color: #b3ffc1;
+    margin-top: 60px;
+}
+
+.logo-top-text b {
+    color: #008017;
+}
+
+.footer-logo {
+    margin-left: 60px;
+}
+
+.author-text {
+    color: #cccccc;
+    font-size: 10px;
+}
+
+.author-div {
+    margin-top: 15px;
+}
+
+.chevron-top {
+    position: relative;
+    top: -32px;
+    right: 1em;
+    background-color: black;
+    opacity: 0.5;
+    padding: 0px 4px 4px 5px;
+}
+
+.chevron-top:hover {
+    opacity: 1;
+    cursor: pointer;
+    cursor: hand;
+    transition: opacity .20s ease-in-out;
+   -moz-transition: opacity .20s ease-in-out;
+   -webkit-transition: opacity .20s ease-in-out;
+}
+
+.hidden-top-menu {
+    background-color: #003309;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.bottom-part-menu {
+    background-color: white;
+}
+
+@media screen and (max-width:1675px) {
+    #title-1 {
+        font-size: 65px !important;
+    }
+
+    #title-2 {
+        font-size: 50px !important;
+    }
+
+    #title-3-1, #title-3-2, #title-3-3, #title-3-4 {
+        font-size: 50px !important;
+    }
+
+    #subtitle-1 {
+        font-size: 25px;
+    }
+
+    #div-subtitle2 {
+        top: 24em !important;
+        left: 72em !important;
+    }
+
+    #div-subtitle3 {
+        top: 24em !important;
+        left: 57em !important;
+    }
+
+    .line {
+        height: 4px;
+    }
+
+    .picture-titles {
+        top: 19em;
+    }
+}
+
+@media screen and (max-width:1600px) {
+    #title-1 {
+        font-size: 40px !important;
+    }
+
+    #title-2 {
+        font-size: 40px !important;
+    }
+
+    #title-3-1, #title-3-2, #title-3-3, #title-3-4 {
+        font-size: 40px !important;
+    }
+
+    #subtitle-1 {
+        font-size: 20px;
+    }
+
+    .line {
+        width: 18%;
+        top: 19em;
+    }
+
+    .stop-img {
+        top: 47%;
+    }
+
+    .picture-titles2 {
+       width: 20%;
+    }
+
+    #subtitle-2 {
+        height: 65px;
+    }
+
+    #subtitle-3 {
+        height: 65px;
+    }
+
+    .button {
+        font-size: 20px !important;
+    }
+}
+
+@media screen and (max-width:1450px) {
+    #div-subtitle1 {
+        top: 30em;
+    }
+
+    .line {
+        top: 18em;
+    }
+
+    .stop-img {
+        top: 43%;
+    }
+
+    #div-subtitle2 {
+        left: 62em !important;
+    }
+
+    #div-subtitle3 {
+        top: 22em!important;
+    }
+
+    .picture-titles2 {
+       left: 70em;
+    }
+
+    .picture-subtitles3 {
+        top: 24em;
+    }
+
+    .picture-titles3 {
+        top: 23em;
+    }
+}
+
+@media screen and (max-width:1330px) {
+    #title-1 {
+        font-size: 36px !important;
+    }
+
+    #title-2 {
+        font-size: 36px !important;
+    }
+
+    #title-3-1, #title-3-2, #title-3-3, #title-3-4 {
+        font-size: 36px !important;
+    }
+
+    #subtitle-1 {
+        font-size: 20px;
+    }
+
+    .line {
+        top: 16em;
+    }
+
+    #div-subtitle1 {
+        top: 28em;
+    }
+
+    #div-title1 {
+        top: 18em;
+    }
+
+    .stop-img {
+        top: 41%;
+    }
 }
