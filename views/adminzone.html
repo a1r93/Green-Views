@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zone administrateur</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="/webapp/dist/css/admin-min.css">
+    <link rel="stylesheet" type="text/css" href="./webapp/dist/css/toastr.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.11/css/AdminLTE.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="/webapp/dist/js/jquery.filedrop.js"></script>
+    <script type="text/javascript" src="./webapp/dist/js/toastr.js"></script>
+    <script type="text/javascript" src="/webapp/dist/js/admin-min.js"></script>
+</head>
+<body class="light-blue">
+    <section class="container">
+        <section class="content-header">
+            <h1>Tu es le bienvenu Joël</h1>
+        </section>
+        <section class="content">
+            <div class="row">
+                <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#import-pictures" data-toggle="tab">importer photos accueil</a>
+                        </li>
+                        <li><a href="#delete-pictures" data-toggle="tab">Supprimer photos accueil</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div id="import-pictures" class="tab-pane active">
+                            <div id="spinning-wheel"><i class="fa fa-spinner fa-spin fa-10x"></i></div>
+                            <h3>Tu peux importer ici les photos qui se trouveront <b>sur la page d'accueil</b></h3>
+                            <div id="dropzone">
+                                <img src="" height="150" class="images" id="img-tmp" alt="Image preview..." hidden>
+                                <div class="back">
+                                    <i class="fa fa-cloud-upload fa-10x"></i>
+                                    <p class="image-text">drop tes images ici.</p>
+                                </div>
+                            </div>
+                            <div class="pull-right">
+                                <button type="button" id="upload_button" class="btn btn-primary" style="margin-top: 5px;">Envoyer</button>
+                            </div>
+                        </div>
+                        <div id="delete-pictures" class="tab-pane">
+                            <h3>Tu peux supprimer ici les photos que tu ne veux plus voir sur la page d'accueil</h3>
+                            <table id="images-table" class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>id</th>
+                                        <th>Appercu</th>
+                                        <th width=100>Supprimer</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <div class="modal fade" id="modal-remove-image" tabindex="-1" role="dialog" aria-labelledby="myModalLabelremove" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabelremove">Supprimer une image</h4>
+                </div>
+                <div id="id" hidden></div>
+                <div class="modal-body">
+                    Certain de vouloir supprimer l'image?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                    <button id="remove-button-image" type="button" class="btn btn-primary" data-dismiss="modal">Oui</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
