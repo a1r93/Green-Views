@@ -3,19 +3,48 @@ var imagesTable;
 
 $(document).ready(function() {
     $("#spinning-wheel").hide();
-    submitHandler();
+    submitHandler(function(names) {
+        sendPhotos(names, function() {
+            window.location.reload();
+        })
+    });
     initDatatable();
     buttonsHandler();
     imageDropping();
 })
 
-var submitHandler = function() {
-    $("#upload_button").on('click', function() {
-        $("#spinning-wheel").show();
-        $("#toHide").hide();
+var sendPhotos = function(names, callback) {
+    for (var name of names) {
+        $.ajax({
+            type: 'POST',
+            url: '/api/image',
+            data: JSON.stringify(name),
+            contentType: "application/json",
+            success: function(response) {
+                console.log(response);
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                showNotification('Erreur ' + xhr.status + '! ' + xhr.responseText, 'error');
+            }
+        });
+    }
+    callback(null);
+}
 
-        $("#dropzone").find('img').each(function() {
-            var imgname = $(this).attr('name')
+var submitHandler = function(callback) {
+    $("#upload_button").on('click', function() {
+        console.log("alloooooo");
+        $("#spinning-wheel").show();
+        $("#dropzone").hide();
+        var names = Array();
+
+        $("#dropzone").find('img').each(function(i) {
+            var imgname = $(this).attr('name');
+            var name = {
+                'name': imgname,
+            }
+
+            names[i] = name;
             if ($(this).attr('src') != undefined && $(this).attr('src') != "") {
                 var data = {
                     'name': imgname,
@@ -28,23 +57,7 @@ var submitHandler = function() {
                     data: JSON.stringify(data),
                     contentType: "application/json",
                     success: function(response) {
-                        console.log(response);
-                        var name = {
-                            'name': imgname,
-                        }
 
-                        $.ajax({
-                            type: 'POST',
-                            url: '/api/image',
-                            data: JSON.stringify(name),
-                            contentType: "application/json",
-                            success: function(response) {
-                                console.log(response);
-                            },
-                            error: function(xhr, ajaxOptions, thrownError) {
-                                showNotification('Erreur ' + xhr.status + '! ' + xhr.responseText, 'error');
-                            }
-                        });
                     },
                     error: function(xhr, ajaxOptions, thrownError) {
                         showNotification('Erreur ' + xhr.status + '! ' + xhr.responseText, 'error');
@@ -52,8 +65,8 @@ var submitHandler = function() {
                 })
             }
         }).promise().done(function() {
-        })
-        
+            callback(names);
+        });
     })
 }
 

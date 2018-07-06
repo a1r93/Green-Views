@@ -37,16 +37,18 @@
                     <div class="tab-content">
                         <div id="import-pictures" class="tab-pane active">
                             <div id="spinning-wheel"><i class="fa fa-spinner fa-spin fa-10x"></i></div>
-                            <h3>Tu peux importer ici les photos qui se trouveront <b>sur la page d'accueil</b></h3>
-                            <div id="dropzone">
-                                <img src="" height="150" class="images" id="img-tmp" alt="Image preview..." hidden>
-                                <div class="back">
-                                    <i class="fa fa-cloud-upload fa-10x"></i>
-                                    <p class="image-text">drop tes images ici.</p>
+                            <div id="toHide">
+                                <h3>Tu peux importer ici les photos qui se trouveront <b>sur la page d'accueil</b></h3>
+                                <div id="dropzone">
+                                    <img src="" height="150" class="images" id="img-tmp" alt="Image preview..." hidden>
+                                    <div class="back">
+                                        <i class="fa fa-cloud-upload fa-10x"></i>
+                                        <p class="image-text">drop tes images ici.</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="pull-right">
-                                <button type="button" id="upload_button" class="btn btn-primary" style="margin-top: 5px;">Envoyer</button>
+                                <div class="pull-right">
+                                    <button type="button" id="upload_button" class="btn btn-primary" style="margin-top: 5px;">Envoyer</button>
+                                </div>
                             </div>
                         </div>
                         <div id="delete-pictures" class="tab-pane">

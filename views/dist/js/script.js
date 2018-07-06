@@ -1,6 +1,3 @@
-var switchInterval;
-var multipleInterval;
-var url_base = "localhost:3000";
 var done = false;
 var nbOfImages = 0;
 
@@ -11,17 +8,26 @@ $(window).load(preload([
 ]));
 
 $(document).ready(function() {
-    console.log($(window).height());
     $(".hidden-top-menu").hide();
     $(".notifications").hide();
-    imageEventHandler();
-    multipleTitles();
     animateToDivs();
-    galleriaImagesLoader();
     buttonHandler();
+    $('#my-slide').DrSlider({
+        navigationType: 'circle',
+        navigationColor: '#99ff99',
+        navigationHoverColor: '#00b300',
+        navigationHighlightColor: '#bfbfbf',
+        duration: 8000,
+        showControl: true
+    });
+    Galleria.loadTheme('./webapp/dist/galleria/themes/classic/galleria.classic.min.js');
+    Galleria.configure();
+    galleriaImagesLoader(function() {
+        Galleria.run('#galleria');
+    });
 });
 
-var galleriaImagesLoader = function() {
+var galleriaImagesLoader = function(callback) {
     var toAdd = "";
     $.ajax({
         type: 'GET',
@@ -30,28 +36,7 @@ var galleriaImagesLoader = function() {
         success: function(response) {
             var results = response.results;
             for (var image of results) {
-                if (nbOfImages == 0) {
-                    var img = new Image();
-
-                    img.onload = function(){
-                        var height = img.height;
-                        var width = img.width;
-
-                        if ($(window).width() > width) {
-                            $(img).attr('height', '100%');
-                        } else {
-                            $(img).attr('width', '100%');
-                        }
-                        img.id = "image-0-full"
-                        $(img).addClass('shown-image');
-                        
-                        $("#gallery").append(img);
-                    }
-
-                    img.src = './webapp/images-gallery/' + image.name;
-
-                }
-                toAdd += '<img id="image-' + nbOfImages + '" height="85%" class="thumb-images hover-thumbnail" src="./webapp/images-gallery/' + image.name + '"/>'
+                toAdd += '<img id="image-' + nbOfImages + '" height="85%" src="./webapp/images-gallery/' + image.name + '"/>'
                 nbOfImages++;
             }
         },
@@ -59,127 +44,9 @@ var galleriaImagesLoader = function() {
             showNotification('Erreur ' + xhr.status + '! ' + xhr.responseText, 'error');
         }
     }).done(function() {
-        $("#gallery-thumbnail").append(toAdd);
-        $("#image-0").removeClass('hover-thumbnail');
-        console.log($("#image-0"));
+        $("#galleria").append(toAdd);
+        callback(null);
     });
-}
-
-var imageEventHandler = function() {
-    $("#play").hide();
-    $("#div-title2").hide();
-    $("#div-subtitle2").hide();
-    $("#div-title3").hide();
-    $("#title-3-2").hide();
-    $("#title-3-3").hide();
-    $("#title-3-4").hide();
-    $("#div-subtitle3").hide();
-    switchInterval = setInterval(function() {
-        // Bottom one is shown, first one is hidden
-        if ($('#chantier1').hasClass('seen')) {
-            $("#div-title1").hide(100);
-            $("#div-subtitle1").hide(100);
-            $(".line").hide(100);
-
-            $('#chantier1').animate({"left": "100%"}, "slow").removeClass('seen');
-            $("#chantier2").animate({"right": 0}, "slow").addClass('seen');
-            $("#chantier3").css('left', 'auto').css('right', '100%');
-
-            $("#div-title2").show();
-            $("#div-subtitle2").show();
-        } else if ($('#chantier2').hasClass('seen')) {
-            $("#div-title2").hide(100);
-            $("#div-subtitle2").hide(100);
-
-            $('#chantier2').animate({"left": "100%"}, "slow").removeClass('seen');
-            $("#chantier3").animate({"right": 0}, "slow").addClass('seen');
-            $("#chantier1").css('left', 'auto').css('right', '100%');
-
-            $("#div-title3").show();
-            $("#div-subtitle3").show();
-        } else if ($("#chantier3").hasClass('seen')) {
-            $("#div-title3").hide(100);
-            $("#div-subtitle3").hide(100);
-
-            $('#chantier3').animate({"left": "100%"}, "slow").removeClass('seen');
-            $("#chantier1").animate({"right": 0}, "slow").addClass('seen');
-            $("#chantier2").css('left', 'auto').css('right', '100%');
-            
-            $("#div-title1").show();
-            $("#div-subtitle1").show();
-            $(".line").show();
-        }
-    },10000);
-
-    $("#pause").on('click', function() {
-        clearInterval(switchInterval);
-        $("#pause").hide();
-        $("#play").show();
-    })
-
-    $("#play").on('click', function() {
-        switchInterval = setInterval(function() {
-            // Bottom one is shown, first one is hidden
-            if ($('#chantier1').hasClass('seen')) {
-            $("#div-title1").hide(100);
-            $("#div-subtitle1").hide(100);
-            $(".line").hide(100);
-
-            $('#chantier1').animate({"left": "100%"}, "slow").removeClass('seen');
-            $("#chantier2").animate({"right": 0}, "slow").addClass('seen');
-            $("#chantier3").css('left', 'auto').css('right', '100%');
-
-            $("#div-title2").show();
-            $("#div-subtitle2").show();
-        } else if ($('#chantier2').hasClass('seen')) {
-            $("#div-title2").hide(100);
-            $("#div-subtitle2").hide(100);
-
-            $('#chantier2').animate({"left": "100%"}, "slow").removeClass('seen');
-            $("#chantier3").animate({"right": 0}, "slow").addClass('seen');
-            $("#chantier1").css('left', 'auto').css('right', '100%');
-
-            $("#div-title3").show();
-            $("#div-subtitle3").show();
-        } else if ($("#chantier3").hasClass('seen')) {
-            $("#div-title3").hide(100);
-            $("#div-subtitle3").hide(100);
-
-            $('#chantier3').animate({"left": "100%"}, "slow").removeClass('seen');
-            $("#chantier1").animate({"right": 0}, "slow").addClass('seen');
-            $("#chantier2").css('left', 'auto').css('right', '100%');
-            
-            $("#div-title1").show();
-            $("#div-subtitle1").show();
-            $(".line").show();
-        }
-        },10000);
-        $("#play").hide();
-        $("#pause").show();
-    })
-}
-
-var multipleTitles = function() {
-    multipleInterval = setInterval(function() {
-        // Bottom one is shown, first one is hidden
-        if ($('#title-3-1').hasClass('shown')) {
-            $('#title-3-1').removeClass('shown').hide(100);
-            $('#title-3-2').addClass('shown').show();
-        } else if ($('#title-3-2').hasClass('shown')) {
-            $('#title-3-2').removeClass('shown').hide(100);
-            $('#title-3-3').addClass('shown').show();
-        } else if ($("#title-3-3").hasClass('shown')) {
-            $('#title-3-3').removeClass('shown').hide(100);
-            $('#title-3-4').addClass('shown').show();
-        } else if ($("#title-3-4").hasClass('shown')) {
-            $('#title-3-4').removeClass('shown').hide(100);
-            $('#title-3-1').addClass('shown').show();
-        }
-    },2500);
-}
-
-var stopMultipleTitles = function() {
-    clearInterval(multipleInterval);
 }
 
 var animateToDivs = function() {
@@ -197,7 +64,7 @@ var animateToDivs = function() {
 
     $(".home").click(function() {
         $('html, body').animate({
-            scrollTop: $("#top").offset().top
+            scrollTop: $("#my-slide").offset().top - 190
         }, 1000);
     });
 
@@ -246,13 +113,13 @@ var formValidation = function() {
         fine = false;
     }
 
-    $("#name").on('change', function(){
+    $("#name").on('keyup', function(){
         $("#name").css('border-color', '#ccc');
         $("#name-notification").hide();
         $("#name-notif-div").hide();
     });
 
-    $("#email").on('change', function(){
+    $("#email").on('keyup', function(){
         if (! validateEmail($("#email").val())) {
             $("#email").css('border-color', 'tomato');
             $("#email-notification").text('Veuillez entrer une adresse mail valide');
@@ -266,13 +133,13 @@ var formValidation = function() {
         }
     });
 
-    $("#phone").on('change', function(){
+    $("#phone").on('keyup', function(){
         $("#phone").css('border-color', '#ccc');
         $("#phone-notification").hide();
         $("#phone-notif-div").hide();
     });
 
-    $("#comment").on('change', function(){
+    $("#comment").on('keyup', function(){
         $("#comment").css('border-color', '#ccc');
         $("#comment-notification").hide();
         $("#comment-notif-div").hide();

@@ -4,6 +4,7 @@
     <title>Green Views</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./webapp/dist/images/icon.ico" />
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="./webapp/dist/css/toastr.css">
@@ -16,12 +17,14 @@
     <script type="text/javascript" src="./webapp/jquery-visible-master/jquery.visible.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./webapp/dist/js/toastr.js"></script>
+    <script type="text/javascript" src="./webapp/dist/js/devrama.js"></script>
+    <script type="text/javascript" src="./webapp/dist/galleria/galleria-1.5.7.js"></script>
     <script src="./webapp/dist/js/script-min.js"></script>
 </head>
 <body>
-<div class="top-menu hidden-xs">
+<div class="top-menu ">
     <div class="row">
-        <nav class="navbar navigation">
+        <nav class="navbar navbar-custom navbar-fixed-top">
             <div class="topbar" id="topbar">
                 <div class="hidden-top-menu" id="hidden-top-menu">
                     <div class="container">
@@ -58,10 +61,10 @@
                     <div class="pull-right">
                         <a href="https://www.facebook.com/greenviewssprl/"><button class="btn topbar-btn"><i class="fa fa-facebook fa-topbar"></i></button></a>
                         <a href="#"><button class="btn topbar-btn"><i class="fa fa-twitter fa-topbar"></i></button></a>
-                        <a href="#"><button class="btn topbar-btn"><i class="fa fa-instagram fa-topbar"></i></button></a>
+                        <a href="#"><button class="btn topbar-btn last-btn"><i class="fa fa-instagram fa-topbar"></i></button></a>
                     </div>
                 </div>
-                <div class="pull-right" id="show-top">
+                <div class="pull-right hidden-xs" id="show-top">
                     <i class="fa fa-chevron-down fa-2x chevron-top" id="chevron-logo"></i>
                 </div>
             </div>
@@ -96,7 +99,7 @@
     </div>
 </div>
 
-<div class="visible-xs">
+<!-- <div class="visible-xs">
     <ul class="nav navigation-xs">
         <li role="presentation" class="dropdown pull-right">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
@@ -104,7 +107,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                    <a href="#" class="home"><i class="fa fa-home home-button"></i> Accueil</a>
+                    <a href="#top" class="home"><i class="fa fa-home home-button"></i> Accueil</a>
                 </li>
                 <li>
                     <a href="#description" id="toDescription"><i class="fa fa-folder"></i> Description</a>
@@ -118,53 +121,46 @@
             </ul>
         </li>
     </ul>
-</div>
+</div> -->
 
-
-    <div class="row hidden-xs hidden-ipad" id="top">
-        <div id="images">
-            <img class="photo-home seen" id="chantier1" src="./webapp/dist/images/chantier1.jpg">
-            <img class="photo-home" id="chantier2" src="./webapp/dist/images/chantier2.jpg">
-            <img class="photo-home" id="chantier3" src="./webapp/dist/images/chantier3.jpg">
-            <i id="pause" class="fa fa-pause fa-4x stop-img"></i>
-            <i id="play" class="fa fa-play fa-4x stop-img"></i>
-            <div class="picture-titles" id="div-title1">
-                <h2 class="title-1">Bienvenue chez green views</h2>
-            </div>
-            <div class="line"></div>
-            <div class="picture-subtitles" id="div-subtitle1">
-                <h5 class="subtitle-1"><b>Société <br/>d'entreprenariat de jardin</b></h5>
-            </div>
-
-            <div class="picture-titles2" id="div-title2">
-                <h2 class="animated bounceInDown" id="title-2">Visionner la galerie</h2>
-            </div>
-            <div class="picture-subtitles2" id="div-subtitle2">
-                <a href="#pictures" class="toPictures"><button class="button" id="subtitle-2"><span>Visionner</span></button></a>
-            </div>
-
-            <div class="picture-titles3" id="div-title3">
-                <h2 class="animated lightSpeedIn shown" id="title-3-1">Jardins</h2>
-                <h2 class="animated lightSpeedIn" id="title-3-2">Terrasses</h2>
-                <h2 class="animated lightSpeedIn" id="title-3-3">Plantations</h2>
-                <h2 class="animated lightSpeedIn" id="title-3-4">Satisfaction Garantie</h2>
-            </div>
-            <div class="picture-subtitles3" id="div-subtitle3">
-                <a href="#pictures" class="toContact"><button class="button" id="subtitle-3"><span>Contacter</span></button></a>
-            </div>
-        </div>
-    </div>
-
-    <div class="visible-xs visible-ipad">
-        <img class="photo-home-xs" id="chantier-xs" src="./webapp/dist/images/chantier1.jpg">
-        <div class="picture-titles-xs" id="div-title-xs">
+<div id="my-slide">
+    <div data-lazy-background="./webapp/dist/images/chantier1.jpg">
+        <div class="picture-titles" id="div-title1" data-pos="['15%', '0%', '15%', '5%']" data-duration="700" data-effect="move">
             <h2 class="title-1">Bienvenue chez green views</h2>
         </div>
-        <div class="line2"></div>
-        <div class="picture-subtitles-xs" id="div-subtitle-xs">
+        <div class="picture-subtitles" id="div-subtitle1" data-pos="['52%', '0%', '52%', '5%']" data-duration="700" data-effect="move">
             <h5 class="subtitle-1"><b>Société <br/>d'entreprenariat de jardin</b></h5>
         </div>
+        <div class="line hidden-xs" data-pos="['50%', '7%', '50%', '7%']" data-duration="700" data-effect="move"></div>
     </div>
+
+    <div data-lazy-background="./webapp/dist/images/chantier2.jpg">
+        <div class="picture-titles2" id="div-title2" data-pos="['20%', '40%']" data-effect="fadein">
+            <h2 class="" id="title-2">Visionner la galerie</h2>
+        </div>
+        <div class="picture-subtitles2" id="div-subtitle2" data-pos="['30%', '60.5%']" data-effect="fadein">
+            <a href="#pictures" class="toPictures"><button class="button" id="subtitle-2"><span>Visionner</span></button></a>
+        </div>
+    </div>
+
+    <div data-lazy-background="./webapp/dist/images/chantier3.jpg">
+        <div class="picture-titles3" id="div-title3" data-pos="['15%', '85%', '15%', '20%']" data-duration="700" data-effect="move">
+            <h2 id="title-3-1">Jardins</h2>
+        </div>
+        <div class="picture-titles3" id="div-title3" data-pos="['30%', '85%', '30%', '20%']" data-duration="700" data-effect="move">
+            <h2 id="title-3-2">Terrasses</h2>
+        </div>
+        <div class="picture-titles3" id="div-title3" data-pos="['45%', '85%', '45%', '20%']" data-duration="700" data-effect="move">
+            <h2 id="title-3-3">Plantations</h2>
+        </div>
+        <div class="picture-titles3" id="div-title3" data-pos="['60%', '85%', '60%', '20%']" data-duration="700" data-effect="move">
+            <h2 id="title-3-4">Satisfaction</h2>
+        </div>
+        <div class="picture-subtitles3" id="div-subtitle3" data-pos="['60%', '110%', '60%', '60%']" data-duration="700" data-effect="move">
+            <a href="#pictures" class="toContact"><button class="button" id="subtitle-3"><span>Contacter</span></button></a>
+        </div>
+    </div>
+</div>
 
     <div class="row" id="description">
         <div class="container">
@@ -177,17 +173,17 @@
             <div class="row">
                 <div class="col-xs-4 to-big description-divs">
                     <i class="fa fa-pagelines fa-8x description-icons"></i>
-                    <h3><b>Plantations</b></h3>
+                    <h3 class="description-title"><b>Plantations</b></h3>
                     <span class="description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper metus nunc</span>
                 </div>
                 <div class="col-xs-4 to-big description-divs">
                     <i class="fa fa-file-o fa-8x description-icons"></i>
-                    <h3><b>Devis gratuits</b></h3>
+                    <h3 class="description-title"><b>Devis gratuits</b></h3>
                     <span class="description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in dolor et tortor ullamcorper mattis id in libero. Curabitur sit amet eros a purus imperdiet ultrices. </span>
                 </div>
                 <div class="col-xs-4 to-big description-divs">
                     <i class="fa fa-cubes fa-8x description-icons"></i>
-                    <h3><b>Terrasses</b></h3>
+                    <h3 class="description-title"><b>Terrasses</b></h3>
                     <span class="description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at semper est. Interdum et malesuada fames ac ante ipsum primis. </span>
                 </div>
             </div>
@@ -195,17 +191,17 @@
             <div class="row">
                 <div class="col-xs-4 to-big description-divs">
                     <i class="fa fa-tree fa-8x description-icons"></i>
-                    <h3><b>Élagage</b></h3>
+                    <h3 class="description-title"><b>Élagage</b></h3>
                     <span class="description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a porta magna. Cras aliquam, quam eu scelerisque tristique, est.</span>
                 </div>
                 <div class="col-xs-4 to-big description-divs">
                     <i class="fa fa-tachometer fa-8x description-icons"></i>
-                    <h3><b>Entretien</b></h3>
+                    <h3 class="description-title"><b>Entretien</b></h3>
                     <span class="description-text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed nulla a velit scelerisque molestie sit amet ultricies dui. Mauris quis ligula aliquet, viverra lacus sit amet, efficitur eros. Fusce porttitor, nisi.</span>
                 </div>
                 <div class="col-xs-4 to-big description-divs">
                     <i class="fa fa-handshake-o fa-8x description-icons"></i>
-                    <h3><b>Communication</b></h3>
+                    <h3 class="description-title"><b>Communication</b></h3>
                     <span class="description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id mi bibendum, aliquam dolor nec, mollis massa. Integer fermentum neque vel.</span>
                 </div>
             </div>
@@ -221,12 +217,25 @@
                 <hr class="w-50 mx-auto under-title">
             </div>
         </div>
+        <div id="galleria">
+        </div>
+    </div>
+
+    <!-- <div class="row" id="pictures">
+        <div class="container">
+            <div class="gallery-div">
+                <hr class="hr-lg mt-0 mb-3 w-10 mx-auto hr-primary">
+                <h2 class="text-center text-uppercase font-weight-bold my-0">Gallerie</h2>
+                <h5 class="text-center font-weight-light text-muted"><a href="/photos">Voir toutes les photos</a></h5>
+                <hr class="w-50 mx-auto under-title">
+            </div>
+        </div>
         <div id="gallery">
             <div id="next-image" class="pull-right"><i class="fa fa-chevron-right fa-2x chevrons-images"></i></div>
             <div id="previous-image" class="pull-right"><i class="fa fa-chevron-left fa-2x chevrons-images"></i></div>
         </div>
         <div id="gallery-thumbnail"></div>
-    </div>
+    </div> -->
 
     <div id="contact">
         <div class="container">
@@ -311,7 +320,7 @@
                         </div>
                     </div>
                     <div class="col-xs-4">
-                        <div class="col-xs-2"></div>
+                        <div class="col-md-2"></div>
                         <div class="col-xs-8 col-xs-8-x">
                             <span class="footer-title"><b>Informations</b></span>
                             <li class="footer-text"><i class="fa fa-sticky-note"></i> Numéro de TVA: <br/><div class="tabulation">&nbsp;</div>BE 0123456789</li>
